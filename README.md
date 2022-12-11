@@ -4,10 +4,10 @@
 
 Yet-Another RPC Framework
 
-# Features
+## Features
 
 - Support basic data types: int, float, string
-- Support At-least-once semantics
+- Support At-least-once semantics (guaranteed by the HTTP protocol)
 - Support RESTful calls
 
 ## Interface
