@@ -14,3 +14,12 @@ Yet-Another RPC Framework
 
 - remote call float sum(float a, float b)
 - remote call string uppercase(str)
+
+## Build
+
+need cmake, make, nodejs and npm.
+
+```bash
+num run clean # clean build and dist
+npm run build # configure, build, and install C++ lib
+```

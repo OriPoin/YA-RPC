@@ -12,3 +12,12 @@
 
 - 远程调用 float sum(float a, float b)
 - 远程调用 string uppercase(str)
+
+## 构建
+
+需要安装cmake, make完成C++部分的构建；nodejs部分需要基础的nodejs和npm即可，不使用第三方库。
+
+```bash
+num run clean # 清理构建产物
+npm run build # 构建C++库
+```
