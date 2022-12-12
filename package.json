@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rm -rf build dist",
     "build": "mkdir -p build && cmake . -B build && cmake --build build --target install",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cmake --build build --target test"
   },
   "repository": {
     "type": "git",

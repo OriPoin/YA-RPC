@@ -5,7 +5,7 @@
 
 namespace api
 {
-    std::string doSum(std::string value)
+    std::string Sum(std::string value)
     {
         std::stringstream ss(value);
         std::istream_iterator<std::string> begin(ss);
@@ -51,14 +51,6 @@ namespace api
                 return argsSting[0] + argsSting[1];
             }
         }
-    }
-
-    void sum(const v8::FunctionCallbackInfo<v8::Value> &args)
-    {
-        v8::Isolate *isolate = args.GetIsolate();
-        std::string value = std::string(*v8::String::Utf8Value(isolate, args[0]));
-        std::string result = doSum(value);
-        args.GetReturnValue().Set(v8::String::NewFromUtf8(isolate, result.c_str()).ToLocalChecked());
     }
 }
 
