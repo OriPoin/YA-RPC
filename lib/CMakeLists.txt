@@ -1,12 +1,14 @@
 # flags from gyp
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fno-rtti -fno-exceptions")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti -fno-exceptions")
+# FIXME: gyp use -fno-rtti -fno-exceptions, here are disabled, maybe bugs
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
 add_library(wrapper SHARED wrapper.cc)
 set_target_properties(wrapper PROPERTIES SUFFIX ".node")
 add_library(hello api/hello.cc)
 add_library(echo api/echo.cc)
-target_link_libraries(wrapper hello echo)
+add_library(sum api/sum.cc)
+target_link_libraries(wrapper hello echo sum)
 
 install(TARGETS wrapper
     DESTINATION lib

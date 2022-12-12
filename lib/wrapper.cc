@@ -6,6 +6,7 @@ namespace wrapper
   {
     NODE_SET_METHOD(exports, "hello", api::hello);
     NODE_SET_METHOD(exports, "echo", api::echo);
+    NODE_SET_METHOD(exports, "sum", api::sum);
   }
   NODE_MODULE(wrapper, Initialize)
 }
