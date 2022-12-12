@@ -8,7 +8,8 @@ set_target_properties(wrapper PROPERTIES SUFFIX ".node")
 add_library(hello api/hello.cc)
 add_library(echo api/echo.cc)
 add_library(sum api/sum.cc)
-target_link_libraries(wrapper hello echo sum)
+add_library(uppercase api/uppercase.cc)
+target_link_libraries(wrapper hello echo sum uppercase)
 
 install(TARGETS wrapper
     DESTINATION lib
