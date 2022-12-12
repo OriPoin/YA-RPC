@@ -1,0 +1,24 @@
+name: Build and Test CI
+
+on:
+  push
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: deps
+      run:
+        sudo apt install -y libboost-all-dev libnode-dev
+    - name: build
+      run: npm run build
+    - name: run
+      timeout-minutes: 1
+      run: npm run run
+    - name: test
+      run: npm run test
