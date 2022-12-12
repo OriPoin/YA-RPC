@@ -9,7 +9,8 @@
   "scripts": {
     "clean": "rm -rf build dist",
     "build": "mkdir -p build && cmake . -B build && cmake --build build --target install",
-    "test": "cmake --build build --target test"
+    "run": "node src/app.js",
+    "test": "cmake --build build --target test && node tests/stressTester.js "
   },
   "repository": {
     "type": "git",
